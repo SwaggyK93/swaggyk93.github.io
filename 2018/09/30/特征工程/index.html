@@ -79,16 +79,22 @@
 
 
 
-<meta name="description" content="泰迪王的后花园">
-<meta property="og:type" content="website">
-<meta property="og:title" content="王际凯的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="一、特征工程的重要性”数据和特征决定机器学习的上限，而模型和算法只是在逼近这个上限。”  1.更好的特征意味着更强的灵活度 2.更好的特征意味着只需用简单模型，就可以训练出很好的效果 3.更好的特征意味着可以训练出更好的结果 二、特征工程具体流程 2.1特征使用方案基于业务场景理解，找出所有对因变量有影响的自变量。 例如，电商物品推荐问题中： 1.店家：类别、评分、所用快递等 2.商品：类别、评">
+<meta property="og:type" content="article">
+<meta property="og:title" content="特征工程">
+<meta property="og:url" content="http://yoursite.com/2018/09/30/特征工程/index.html">
 <meta property="og:site_name" content="王际凯的博客">
-<meta property="og:description" content="泰迪王的后花园">
+<meta property="og:description" content="一、特征工程的重要性”数据和特征决定机器学习的上限，而模型和算法只是在逼近这个上限。”  1.更好的特征意味着更强的灵活度 2.更好的特征意味着只需用简单模型，就可以训练出很好的效果 3.更好的特征意味着可以训练出更好的结果 二、特征工程具体流程 2.1特征使用方案基于业务场景理解，找出所有对因变量有影响的自变量。 例如，电商物品推荐问题中： 1.店家：类别、评分、所用快递等 2.商品：类别、评">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/Users/teddyjkwang/Blog/blog/source/images/特征工程流程图.png">
+<meta property="og:image" content="http://yoursite.com/Users/teddyjkwang/Library/Application%20Support/typora-user-images/image-20181009163856290.png">
+<meta property="og:image" content="http://yoursite.com/Users/teddyjkwang/Library/Application%20Support/typora-user-images/image-20181009164521561.png">
+<meta property="og:image" content="http://yoursite.com/Users/teddyjkwang/Library/Application%20Support/typora-user-images/image-20181010105034408.png">
+<meta property="og:updated_time" content="2018-10-10T03:44:55.951Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="王际凯的博客">
-<meta name="twitter:description" content="泰迪王的后花园">
+<meta name="twitter:title" content="特征工程">
+<meta name="twitter:description" content="一、特征工程的重要性”数据和特征决定机器学习的上限，而模型和算法只是在逼近这个上限。”  1.更好的特征意味着更强的灵活度 2.更好的特征意味着只需用简单模型，就可以训练出很好的效果 3.更好的特征意味着可以训练出更好的结果 二、特征工程具体流程 2.1特征使用方案基于业务场景理解，找出所有对因变量有影响的自变量。 例如，电商物品推荐问题中： 1.店家：类别、评分、所用快递等 2.商品：类别、评">
+<meta name="twitter:image" content="http://yoursite.com/Users/teddyjkwang/Blog/blog/source/images/特征工程流程图.png">
 
 
 
@@ -118,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/30/特征工程/"/>
 
 
 
 
 
-  <title>王际凯的博客</title>
+  <title>特征工程 | 王际凯的博客</title>
   
 
 
@@ -143,8 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://www.teddyjkwang.com" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
@@ -258,9 +263,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -290,9 +295,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/30/特征工程/" itemprop="url">特征工程</a></h1>
+          <h1 class="post-title" itemprop="name headline">特征工程</h1>
         
 
         <div class="post-meta">
@@ -342,9 +345,7 @@
       
 
       
-        
-          
-            <hr>
+        <hr>
 <h2 id="一、特征工程的重要性"><a href="#一、特征工程的重要性" class="headerlink" title="一、特征工程的重要性"></a>一、特征工程的重要性</h2><p>”数据和特征决定机器学习的上限，而模型和算法只是在逼近这个上限。” </p>
 <p>1.更好的特征意味着更强的灵活度</p>
 <p>2.更好的特征意味着只需用简单模型，就可以训练出很好的效果</p>
@@ -431,8 +432,6 @@
 <p>2.Wrapper：根据目标函数（通常是预测效果评分），每次选择若干特征，或者排除若干特征</p>
 <p>3.Embedded：先使用某些ML算法训练，得到各个特征的权值系数，根据系数从大到小特征选择。类似Filter，但是是通过ML来训练确定的。</p>
 
-          
-        
       
     </div>
     
@@ -442,6 +441,35 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>打赏一杯咖啡也是我创作的动力</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="teddyjkwang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.jpg" alt="teddyjkwang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -449,152 +477,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/利用阿里云+hexo构建个人主页/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="teddyjkwang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/teddy.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="王际凯的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/30/利用阿里云+hexo构建个人主页/" itemprop="url">利用阿里云+Hexo构建个人主页(MacOS)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T17:02:07+08:00">
-                2018-09-30
-              </time>
+              <a href="/2018/09/30/利用阿里云+hexo构建个人主页/" rel="next" title="利用阿里云+Hexo构建个人主页(MacOS)">
+                <i class="fa fa-chevron-left"></i> 利用阿里云+Hexo构建个人主页(MacOS)
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <hr>
-<p>建个人主页这个事情其实已经想了很久了，无奈作为拖延症晚期患者，一直没能把这个事做起来。正逢工作之后第一个国庆小长假，还是觉得落笔写点东西作为沉淀蛮不错的。今天就简单写下构造本网站的tips。</p>
-<h2 id="一、购买域名"><a href="#一、购买域名" class="headerlink" title="一、购买域名"></a>一、购买域名</h2><p>理论上这一步是可选步骤，我们可以通过Github来作为blog的托管。但封装到自己的域名下还是一件很酷的事情。</p>
-<p>域名是网站的入口，申请域名的网站有很多，作为鹅厂优秀员工，再三思考后我选择了阿里云(<a href="https://wanwang.aliyun.com/domain/" target="_blank" rel="noopener">域名注册</a>)…</p>
-<p>我们可以输入心仪的域名看看是否已经被注册占用。一般情况下，.com域名第一年年费大约在60元（阿里云的微信公众号有优惠码），后面续费的话会比第一年稍贵些。</p>
-<h2 id="二、安装Node-js-Hexo"><a href="#二、安装Node-js-Hexo" class="headerlink" title="二、安装Node.js + Hexo"></a>二、安装Node.js + Hexo</h2><h3 id="Hexo环境搭建"><a href="#Hexo环境搭建" class="headerlink" title="Hexo环境搭建"></a>Hexo环境搭建</h3><p>Hexo是一款快速简洁的博客框架，基于Node.js（<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">安装地址</a>）。Node.js在Win和MacOS上均是傻瓜式安装，这里就不多赘述了。Node.js的安装会包含环境变量及npm的安装。</p>
-<p>下面两条命令均显示出版本号就可以代表Hexo的环境搭建完成。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><p>简单的命令行安装步骤</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>此时我们就可以构建一个默认的网站模板：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new your_blog </span><br><span class="line">hexo g # g short for generate</span><br><span class="line">hexo s # s short for server</span><br></pre></td></tr></table></figure>
-<p>完成后，就可以在Chrome中输入<a href="localhost:4000" target="_blank" rel="noopener">localhost:4000</a>(4000为Hexo默认端口)，看到我们的第一篇博客。</p>
-<h2 id="三、绑定GitHub"><a href="#三、绑定GitHub" class="headerlink" title="三、绑定GitHub"></a>三、绑定GitHub</h2><p>上面的步骤都是本地操作，在写完blog之后，还需要push到远端，这里可以用GitHub来做为我们blog的托管（需安装git）。</p>
-<p>1.设置用户名和邮箱</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"GithubUserName"</span></span><br><span class="line">git config --global user.email <span class="string">"BindingEmail"</span></span><br></pre></td></tr></table></figure>
-<p>生成ssh秘钥文件id_rsa.pub（公钥）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"BindingEmail"</span></span><br></pre></td></tr></table></figure>
-<p>打开<a href="https://github.com/settings/keys" target="_blank" rel="noopener">Github Settings Key</a>页面，new SSH Key，输入公钥。并在bash中输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh git@github.com</span><br></pre></td></tr></table></figure>
-<p>如果看到You’ve successfully authenticated字样说明绑定成功了。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -604,138 +508,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="teddyjkwang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/teddy.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="王际凯的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/30/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T09:45:08+08:00">
-                2018-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -743,6 +520,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -763,8 +544,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -826,6 +616,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、特征工程的重要性"><span class="nav-number">1.</span> <span class="nav-text">一、特征工程的重要性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、特征工程具体流程"><span class="nav-number">2.</span> <span class="nav-text">二、特征工程具体流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1特征使用方案"><span class="nav-number">2.1.</span> <span class="nav-text">2.1特征使用方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2特征获取方案"><span class="nav-number">2.2.</span> <span class="nav-text">2.2特征获取方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3特征处理"><span class="nav-number">2.3.</span> <span class="nav-text">2.3特征处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1特征清洗"><span class="nav-number">2.3.1.</span> <span class="nav-text">2.3.1特征清洗</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-1-1-清洗脏数据"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">2.3.1.1 清洗脏数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-基于统计的异常点检测算法"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">1.基于统计的异常点检测算法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#（1）简单统计分析"><span class="nav-number">2.3.1.2.1.</span> <span class="nav-text">（1）简单统计分析</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#（2）3西格玛准则"><span class="nav-number">2.3.1.2.2.</span> <span class="nav-text">（2）3西格玛准则</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#（3）通过极差和四分位数间距，进行异常数据的检测"><span class="nav-number">2.3.1.2.3.</span> <span class="nav-text">（3）通过极差和四分位数间距，进行异常数据的检测</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-基于距离的异常点检测算法"><span class="nav-number">2.3.1.3.</span> <span class="nav-text">2. 基于距离的异常点检测算法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-基于密度的异常点检测算法"><span class="nav-number">2.3.1.4.</span> <span class="nav-text">3.基于密度的异常点检测算法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-1-2-缺失值处理"><span class="nav-number">2.3.1.5.</span> <span class="nav-text">2.3.1.2 缺失值处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-1-3-数据采样"><span class="nav-number">2.3.1.6.</span> <span class="nav-text">2.3.1.3 数据采样</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2-特征预处理"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.3.2 特征预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-类别型"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">2.类别型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-时间型数据"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">3.时间型数据</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-3-特征降维"><span class="nav-number">2.3.3.</span> <span class="nav-text">2.3.3 特征降维</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-特征选择"><span class="nav-number">2.3.4.</span> <span class="nav-text">2.3.4 特征选择</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -968,6 +774,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
