@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="CTR预估 算法CTR预估本质是个二分类问题，以移动端展示广告为例，依据日志中的用户侧信息(年龄、性别、国籍，手机上安装的app列表)、广告测的信息(广告id、广告类别、广告标题)，上下文信息(渠道id)等，去建模预测用户是否会点击该广告。 FM之前的CTR算法FM之前，传统的处理方法是人工特征+线性模型(如LR)，这种方法的关键技术是找到用户点击行为背后隐含的特征组合，如男性、大学生用户往往会点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/09/30/hello-world/index.html">
+<meta property="og:title" content="王际凯的博客">
+<meta property="og:url" content="http://yoursite.com/1984/01/24/CTR预估 算法/index.html">
 <meta property="og:site_name" content="王际凯的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="CTR预估 算法CTR预估本质是个二分类问题，以移动端展示广告为例，依据日志中的用户侧信息(年龄、性别、国籍，手机上安装的app列表)、广告测的信息(广告id、广告类别、广告标题)，上下文信息(渠道id)等，去建模预测用户是否会点击该广告。 FM之前的CTR算法FM之前，传统的处理方法是人工特征+线性模型(如LR)，这种方法的关键技术是找到用户点击行为背后隐含的特征组合，如男性、大学生用户往往会点">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-30T01:45:08.720Z">
+<meta property="og:updated_time" content="2019-05-11T08:47:48.382Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="王际凯的博客">
+<meta name="twitter:description" content="CTR预估 算法CTR预估本质是个二分类问题，以移动端展示广告为例，依据日志中的用户侧信息(年龄、性别、国籍，手机上安装的app列表)、广告测的信息(广告id、广告类别、广告标题)，上下文信息(渠道id)等，去建模预测用户是否会点击该广告。 FM之前的CTR算法FM之前，传统的处理方法是人工特征+线性模型(如LR)，这种方法的关键技术是找到用户点击行为背后隐含的特征组合，如男性、大学生用户往往会点">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/30/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/1984/01/24/CTR预估 算法/"/>
 
 
 
 
 
-  <title>Hello World | 王际凯的博客</title>
+  <title> | 王际凯的博客</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/1984/01/24/CTR预估 算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="teddyjkwang">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T09:45:08+08:00">
-                2018-09-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="1984-01-24T16:00:00+08:00">
+                1984-01-24
               </time>
             
 
@@ -340,15 +340,12 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="CTR预估-算法"><a href="#CTR预估-算法" class="headerlink" title="CTR预估 算法"></a>CTR预估 算法</h1><p>CTR预估本质是个二分类问题，以移动端展示广告为例，依据日志中的用户侧信息(年龄、性别、国籍，手机上安装的app列表)、广告测的信息(广告id、广告类别、广告标题)，上下文信息(渠道id)等，去建模预测用户是否会点击该广告。</p>
+<h2 id="FM之前的CTR算法"><a href="#FM之前的CTR算法" class="headerlink" title="FM之前的CTR算法"></a>FM之前的CTR算法</h2><p>FM之前，传统的处理方法是人工特征+线性模型(如LR)，这种方法的关键技术是找到用户点击行为背后隐含的特征组合，如男性、大学生用户往往会点击游戏类广告(<strong>那么男性且是大学生且是游戏类的组合特征就是一个关键特征</strong>)</p>
+<p>公式：$y_{linear} = \sigma(&lt;\vec w,\vec x&gt;)​$，其中$\vec w​$是权重向量，$\vec x​$是特征向量，$\sigma​$是sigmoid函数</p>
+<p>人工特征组合会存在诸多困难，如特征爆炸，特征难以被识别，组合特征难以设计。为了让模型自动考虑特征之间的二阶组合信息，线性模型推广为二阶多项式(2d-Polynomial)：</p>
+<p>$y_{poly} = \sigma (&lt;\vec w,\vec x&gt; + \sum_{i=1}^n\sum_{j=1}^n w_{ij} x_i y_j)​$</p>
+<p>其实就是特征两两相乘构成新特征，离散化后其实就是”且”操作，并对每个新特征分配独立的权重，通过机器学习自动学习这些权重。</p>
 
       
     </div>
@@ -402,7 +399,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/1984/01/24/将word2vec应用于推荐和广告之中/" rel="next" title="">
+              <a href="/1984/01/24/1.3.2参数与统计量/" rel="next" title="">
                 <i class="fa fa-chevron-left"></i> 
               </a>
             
@@ -412,8 +409,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/30/利用阿里云+hexo构建个人主页/" rel="prev" title="利用阿里云+Hexo构建个人主页(MacOS)">
-                利用阿里云+Hexo构建个人主页(MacOS) <i class="fa fa-chevron-right"></i>
+              <a href="/1984/01/24/CTR FOR PPC/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -548,7 +545,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CTR预估-算法"><span class="nav-number">1.</span> <span class="nav-text">CTR预估 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#FM之前的CTR算法"><span class="nav-number">1.1.</span> <span class="nav-text">FM之前的CTR算法</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="Ch02 数据查找与资源分配算法2.1数值查找算法​    查找：大量数据寻找特定元素，是数值计算常用的运算逻辑。 ​    一般方法 ​    1.按照顺序依次查找(性能损耗大) ​    2.折半查找二叉树查找：针对有序数值序列快速查找 ​    3.哈希查找：无序的数值序列查找 2.1.1 二分搜索查找(折半查找、对数查找)： 有序数值序列​    最差时间复杂度$O(lg n)$，最优时间">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/09/30/hello-world/index.html">
+<meta property="og:title" content="王际凯的博客">
+<meta property="og:url" content="http://yoursite.com/1984/01/24/Ch02 数据查找与资源分配算法/index.html">
 <meta property="og:site_name" content="王际凯的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Ch02 数据查找与资源分配算法2.1数值查找算法​    查找：大量数据寻找特定元素，是数值计算常用的运算逻辑。 ​    一般方法 ​    1.按照顺序依次查找(性能损耗大) ​    2.折半查找二叉树查找：针对有序数值序列快速查找 ​    3.哈希查找：无序的数值序列查找 2.1.1 二分搜索查找(折半查找、对数查找)： 有序数值序列​    最差时间复杂度$O(lg n)$，最优时间">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-30T01:45:08.720Z">
+<meta property="og:updated_time" content="2019-05-12T14:54:36.077Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="王际凯的博客">
+<meta name="twitter:description" content="Ch02 数据查找与资源分配算法2.1数值查找算法​    查找：大量数据寻找特定元素，是数值计算常用的运算逻辑。 ​    一般方法 ​    1.按照顺序依次查找(性能损耗大) ​    2.折半查找二叉树查找：针对有序数值序列快速查找 ​    3.哈希查找：无序的数值序列查找 2.1.1 二分搜索查找(折半查找、对数查找)： 有序数值序列​    最差时间复杂度$O(lg n)$，最优时间">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/30/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/1984/01/24/Ch02 数据查找与资源分配算法/"/>
 
 
 
 
 
-  <title>Hello World | 王际凯的博客</title>
+  <title> | 王际凯的博客</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/1984/01/24/Ch02 数据查找与资源分配算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="teddyjkwang">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T09:45:08+08:00">
-                2018-09-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="1984-01-24T16:00:00+08:00">
+                1984-01-24
               </time>
             
 
@@ -340,15 +340,39 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="Ch02-数据查找与资源分配算法"><a href="#Ch02-数据查找与资源分配算法" class="headerlink" title="Ch02 数据查找与资源分配算法"></a>Ch02 数据查找与资源分配算法</h1><h2 id="2-1数值查找算法"><a href="#2-1数值查找算法" class="headerlink" title="2.1数值查找算法"></a>2.1数值查找算法</h2><p>​    查找：大量数据寻找特定元素，是数值计算常用的运算逻辑。</p>
+<p>​    一般方法</p>
+<p>​    1.按照顺序依次查找(性能损耗大)</p>
+<p>​    2.折半查找二叉树查找：针对有序数值序列快速查找</p>
+<p>​    3.哈希查找：无序的数值序列查找</p>
+<h4 id="2-1-1-二分搜索查找-折半查找、对数查找-：-有序数值序列"><a href="#2-1-1-二分搜索查找-折半查找、对数查找-：-有序数值序列" class="headerlink" title="2.1.1 二分搜索查找(折半查找、对数查找)： 有序数值序列"></a>2.1.1 二分搜索查找(折半查找、对数查找)： <strong>有序</strong>数值序列</h4><p>​    最差时间复杂度$O(lg n)$，最优时间复杂度O(1)，平均时间复杂度$O(lg n)$。</p>
+<h4 id="2-1-2-分块查找"><a href="#2-1-2-分块查找" class="headerlink" title="2.1.2 分块查找"></a>2.1.2 分块查找</h4><p>​    算法效率介于顺序查找和二分查找之间。需要一个辅助索引结构存储块的最大值和块的起始位置。</p>
+<h4 id="2-1-3-哈希查找算法：不要求有序"><a href="#2-1-3-哈希查找算法：不要求有序" class="headerlink" title="2.1.3 哈希查找算法：不要求有序"></a>2.1.3 哈希查找算法：不要求有序</h4><p>​    计算元素的存储地址进行的快速查找方式，哈希查找步骤：</p>
+<p>​    1.哈希函数构造哈希表</p>
+<p>​    2.将元素进行哈希函数过滤，选择其存储的地址</p>
+<p>​    3.将需要查找的元素经过哈希函数映射到存储地址</p>
+<p>​    4.存储地址中，查找元素是否存在</p>
+<p>哈希函数、哈希表的结构 最重要的两大因素，直接影响Hash的查找速度。</p>
+<p>Hash table(散列表)，依据k-v构建的数据结构，key由哈希函数产生，用以加快查找的速度。</p>
+<p>哈希函数的构造方法很多：</p>
+<p>直接地址法</p>
+<p>平方取中法</p>
+<p>除数留余法</p>
+<p>随机数法</p>
+<p>数字分析法</p>
+<p>折叠法</p>
+<p>上述六种方法产生的哈希值，随着数据量增加，当超越哈希值的时候，就可能发生数值冲突。</p>
+<p>解决冲突：开放定址法、再哈希法、链地址法。</p>
+<p>###2.2字符串查找算法</p>
+<h4 id="2-2-1-KMP算法"><a href="#2-2-1-KMP算法" class="headerlink" title="2.2.1 KMP算法"></a>2.2.1 KMP算法</h4><p>​    <a href="https://blog.csdn.net/liu88010988/article/details/50789960" target="_blank" rel="noopener">https://blog.csdn.net/liu88010988/article/details/50789960</a></p>
+<p>​    移动位数 = 已匹配的字符数 - 对应的部分匹配值</p>
+<h3 id="2-3-海量数据中的查找"><a href="#2-3-海量数据中的查找" class="headerlink" title="2.3 海量数据中的查找"></a>2.3 海量数据中的查找</h3><h4 id="2-3-1-基于布隆过滤器查找"><a href="#2-3-1-基于布隆过滤器查找" class="headerlink" title="2.3.1 基于布隆过滤器查找"></a>2.3.1 基于布隆过滤器查找</h4><p>​    布隆过滤器：很长的二进制矢量和一系列随机映射函数。可以用于检索一个元素是否在一个集合中</p>
+<p>​    优点：<strong>空间效率和查询时间远超一般算法</strong>，缺点：一定的误识别率和删除困难</p>
+<p>1.概念</p>
+<p>​    要判断一个元素是不是在一个即合理，通常的办法将集合中所有元素保存取来，再通过比较确定。链表、树、散列表都是用这种思路，但随集合中元素的增加，存储空间需要越来越大，检索速度越来越慢。</p>
+<p>​    布隆过滤器原理：当一个元素加入集合，通过K个散列函数将这个元素映射为一个位数组中的K个点，把它们置为1。检索时，只要查看这些点是不是都是1就（大约）知道集合中有没有它了，如果这些点有任何一个是0，那么被检元素一定不在集合中；如果都是1，很可能在</p>
+<p>​    </p>
+<p>​    </p>
 
       
     </div>
@@ -402,7 +426,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/1984/01/24/将word2vec应用于推荐和广告之中/" rel="next" title="">
+              <a href="/1984/01/24/Quality Score/" rel="next" title="">
                 <i class="fa fa-chevron-left"></i> 
               </a>
             
@@ -412,8 +436,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/30/利用阿里云+hexo构建个人主页/" rel="prev" title="利用阿里云+Hexo构建个人主页(MacOS)">
-                利用阿里云+Hexo构建个人主页(MacOS) <i class="fa fa-chevron-right"></i>
+              <a href="/1984/01/24/Spark机器学习笔记/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -548,7 +572,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch02-数据查找与资源分配算法"><span class="nav-number">1.</span> <span class="nav-text">Ch02 数据查找与资源分配算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1数值查找算法"><span class="nav-number">1.1.</span> <span class="nav-text">2.1数值查找算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-二分搜索查找-折半查找、对数查找-：-有序数值序列"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">2.1.1 二分搜索查找(折半查找、对数查找)： 有序数值序列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-分块查找"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">2.1.2 分块查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-3-哈希查找算法：不要求有序"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">2.1.3 哈希查找算法：不要求有序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-KMP算法"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">2.2.1 KMP算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-海量数据中的查找"><span class="nav-number">1.1.1.</span> <span class="nav-text">2.3 海量数据中的查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-基于布隆过滤器查找"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">2.3.1 基于布隆过滤器查找</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="最基础的是基于神经网络的方法的到词向量语言模型。一般有输入层（词向量），隐藏层和输出层（softmax）。 word2vec对上面的模型作出改进，首先对于输入层到隐藏层的映射，没有采取神经网络的线性变换+激活函数的方法，而是采用简单的对所有输入词向量求和取平均的方法。 第二个改进：隐藏层到输出层，为了避免计算所有词的softmax，word2vec采样了霍夫曼树来代替从隐藏层到输出softmax">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/09/30/hello-world/index.html">
+<meta property="og:title" content="王际凯的博客">
+<meta property="og:url" content="http://yoursite.com/1984/01/24/将word2vec应用于推荐和广告之中/index.html">
 <meta property="og:site_name" content="王际凯的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="最基础的是基于神经网络的方法的到词向量语言模型。一般有输入层（词向量），隐藏层和输出层（softmax）。 word2vec对上面的模型作出改进，首先对于输入层到隐藏层的映射，没有采取神经网络的线性变换+激活函数的方法，而是采用简单的对所有输入词向量求和取平均的方法。 第二个改进：隐藏层到输出层，为了避免计算所有词的softmax，word2vec采样了霍夫曼树来代替从隐藏层到输出softmax">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-30T01:45:08.720Z">
+<meta property="og:updated_time" content="2018-12-17T13:09:53.107Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="王际凯的博客">
+<meta name="twitter:description" content="最基础的是基于神经网络的方法的到词向量语言模型。一般有输入层（词向量），隐藏层和输出层（softmax）。 word2vec对上面的模型作出改进，首先对于输入层到隐藏层的映射，没有采取神经网络的线性变换+激活函数的方法，而是采用简单的对所有输入词向量求和取平均的方法。 第二个改进：隐藏层到输出层，为了避免计算所有词的softmax，word2vec采样了霍夫曼树来代替从隐藏层到输出softmax">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/30/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/1984/01/24/将word2vec应用于推荐和广告之中/"/>
 
 
 
 
 
-  <title>Hello World | 王际凯的博客</title>
+  <title> | 王际凯的博客</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/1984/01/24/将word2vec应用于推荐和广告之中/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="teddyjkwang">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T09:45:08+08:00">
-                2018-09-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="1984-01-24T16:00:00+08:00">
+                1984-01-24
               </time>
             
 
@@ -340,15 +340,21 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <hr>
+<p>最基础的是基于神经网络的方法的到词向量语言模型。一般有输入层（词向量），隐藏层和输出层（softmax）。</p>
+<p>word2vec对上面的模型作出改进，首先对于输入层到隐藏层的映射，没有采取神经网络的线性变换+激活函数的方法，而是采用简单的对所有输入词向量求和取平均的方法。</p>
+<p>第二个改进：隐藏层到输出层，为了避免计算所有词的softmax，word2vec采样了<strong>霍夫曼树</strong>来代替从隐藏层到输出softmax层的映射</p>
+<p>word2vec有两种改进方法，一种是基于Hierarchical Softmax的，另一种基于Negative Sampling。</p>
+<p>​    层次softmax的缺点：如果训练样本里的中心词w是一个很生僻的词，那么就得在huffman树中走很久了。因此提出Negative Sampling的方法。</p>
+<h4 id="Negative-Sampling"><a href="#Negative-Sampling" class="headerlink" title="Negative Sampling"></a>Negative Sampling</h4><p>​    比如有一个训练样本，其中心词是w，他周围上下文共有2c个词，记为<em>context(w)</em>，由于这个中心词w的确和<em>context(w)</em>相关存在，因此它是真实的正例。通过Negative Sampling采样，可以得到neg个和w不同的中心词$w_i$,i=1,2,…neg，这样<em>context(w)</em>和$w_i$就形成了neg个并不真实存在的负例。利用这一个正例和neg个负例，进行二元逻辑回归，得到负采样对应每个词$w_i$对应的模型参数$theta_{i}$，和每个词的词向量。</p>
+<p>​    词典中的词在语料中出现的次数有高有低，对于高频词，被选为负样本的概率应该比较大；反之对于低频词，被选中的概率就应该比较小，它本质上就是一个带权采样问题。</p>
+<p>​    NS由于没有采样霍夫曼树，每次只是采样neg个不同的中心词 作为负例，就可以训练模型，因此整个过程比Hierarchical Softmax简单</p>
+<p>Word2vec模型</p>
+<p>skip-gram神经网络：训练一个简单的单隐层神经网络来完成换一个特定任务，但我们实际上不会用这个神经网络。这步的目标仅仅是训练得到隐层的词向量。</p>
+<p>利用虚假的目标（Fake Task）训练神经网络：</p>
+<p>给定一个句子中的特定单词（输入单词），选择它周边，并随机选择一个。神经网络可以预测该单词使我们输入单词的周边单词的概率。（这里涉及一个窗口大小，一个窗口大小的典型值是5，前后为10）</p>
+<p>训练神经网络：输入word pairs</p>
+<h3 id="将word2vec应用于推荐和广告之中"><a href="#将word2vec应用于推荐和广告之中" class="headerlink" title="将word2vec应用于推荐和广告之中"></a>将word2vec应用于推荐和广告之中</h3><p>online user activity的时序信息同样能够提供推断上下文的意义，</p>
 
       
     </div>
@@ -402,7 +408,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/1984/01/24/将word2vec应用于推荐和广告之中/" rel="next" title="">
+              <a href="/1984/01/24/xgboost理论和调参实践/" rel="next" title="">
                 <i class="fa fa-chevron-left"></i> 
               </a>
             
@@ -412,8 +418,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/30/利用阿里云+hexo构建个人主页/" rel="prev" title="利用阿里云+Hexo构建个人主页(MacOS)">
-                利用阿里云+Hexo构建个人主页(MacOS) <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/30/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -548,7 +554,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Negative-Sampling"><span class="nav-number">1.</span> <span class="nav-text">Negative Sampling</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将word2vec应用于推荐和广告之中"><span class="nav-number"></span> <span class="nav-text">将word2vec应用于推荐和广告之中</span></a></div>
             
 
           </div>

@@ -733,9 +733,901 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/1984/01/24/将word2vec应用于推荐和广告之中/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="teddyjkwang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/teddy.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王际凯的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1984/01/24/将word2vec应用于推荐和广告之中/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="1984-01-24T16:00:00+08:00">
+                1984-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>最基础的是基于神经网络的方法的到词向量语言模型。一般有输入层（词向量），隐藏层和输出层（softmax）。</p>
+<p>word2vec对上面的模型作出改进，首先对于输入层到隐藏层的映射，没有采取神经网络的线性变换+激活函数的方法，而是采用简单的对所有输入词向量求和取平均的方法。</p>
+<p>第二个改进：隐藏层到输出层，为了避免计算所有词的softmax，word2vec采样了<strong>霍夫曼树</strong>来代替从隐藏层到输出softmax层的映射</p>
+<p>word2vec有两种改进方法，一种是基于Hierarchical Softmax的，另一种基于Negative Sampling。</p>
+<p>​    层次softmax的缺点：如果训练样本里的中心词w是一个很生僻的词，那么就得在huffman树中走很久了。因此提出Negative Sampling的方法。</p>
+<h4 id="Negative-Sampling"><a href="#Negative-Sampling" class="headerlink" title="Negative Sampling"></a>Negative Sampling</h4><p>​    比如有一个训练样本，其中心词是w，他周围上下文共有2c个词，记为<em>context(w)</em>，由于这个中心词w的确和<em>context(w)</em>相关存在，因此它是真实的正例。通过Negative Sampling采样，可以得到neg个和w不同的中心词$w_i$,i=1,2,…neg，这样<em>context(w)</em>和$w_i$就形成了neg个并不真实存在的负例。利用这一个正例和neg个负例，进行二元逻辑回归，得到负采样对应每个词$w_i$对应的模型参数$theta_{i}$，和每个词的词向量。</p>
+<p>​    词典中的词在语料中出现的次数有高有低，对于高频词，被选为负样本的概率应该比较大；反之对于低频词，被选中的概率就应该比较小，它本质上就是一个带权采样问题。</p>
+<p>​    NS由于没有采样霍夫曼树，每次只是采样neg个不同的中心词 作为负例，就可以训练模型，因此整个过程比Hierarchical Softmax简单</p>
+<p>Word2vec模型</p>
+<p>skip-gram神经网络：训练一个简单的单隐层神经网络来完成换一个特定任务，但我们实际上不会用这个神经网络。这步的目标仅仅是训练得到隐层的词向量。</p>
+<p>利用虚假的目标（Fake Task）训练神经网络：</p>
+<p>给定一个句子中的特定单词（输入单词），选择它周边，并随机选择一个。神经网络可以预测该单词使我们输入单词的周边单词的概率。（这里涉及一个窗口大小，一个窗口大小的典型值是5，前后为10）</p>
+<p>训练神经网络：输入word pairs</p>
+<h3 id="将word2vec应用于推荐和广告之中"><a href="#将word2vec应用于推荐和广告之中" class="headerlink" title="将word2vec应用于推荐和广告之中"></a>将word2vec应用于推荐和广告之中</h3><p>online user activity的时序信息同样能够提供推断上下文的意义，</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/1984/01/24/xgboost理论和调参实践/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="teddyjkwang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/teddy.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王际凯的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1984/01/24/xgboost理论和调参实践/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="1984-01-24T16:00:00+08:00">
+                1984-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="xgboost理论和调参实践"><a href="#xgboost理论和调参实践" class="headerlink" title="xgboost理论和调参实践"></a>xgboost理论和调参实践</h2><p>数据2-simga举办的竞赛<a href="https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/data，预测租房问题" target="_blank" rel="noopener">https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/data，预测租房问题</a></p>
+<p>#1.Boosting原理</p>
+<p>Boosting：将弱学习器组成强学习器。</p>
+<p>若学习器：性能比随机猜好。（层数不深的CART是个好选择）</p>
+<h2 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h2><p>样本权重/过滤：二分类问题，给定n个训练样本。训练集上样本初始分布1/n。对m=1:M，计算该弱分类器在分布上的误差；计算该弱分类器的权重。<br>$$</p>
+<p>$$</p>
+<p>#2.Gradient Boosting</p>
+<p>#3.XGBoost</p>
+<p>自定义损失函数：二阶近似函数。</p>
+<p>规范化的正则项：叶子节点数目，叶子节点分数</p>
+<p>建树和简直：先建完全树后剪枝</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/1984/01/24/宏观经济学（CH25生产与增长）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="teddyjkwang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/teddy.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王际凯的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1984/01/24/宏观经济学（CH25生产与增长）/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="1984-01-24T16:00:00+08:00">
+                1984-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="宏观经济学（CH25生产与增长）"><a href="#宏观经济学（CH25生产与增长）" class="headerlink" title="宏观经济学（CH25生产与增长）"></a>宏观经济学（CH25生产与增长）</h1><p>生产率：</p>
+<p>每单位劳动投入所生产的物品和服务的数量</p>
+<h5 id="生产率如何决定："><a href="#生产率如何决定：" class="headerlink" title="生产率如何决定："></a>生产率如何决定：</h5><p>1.人均物质资本；物质资本：用于生产物品与服务的设备和建筑物存量。</p>
+<p>2.人均人力资本；人力资本：工人通过教育、培训和经验而获得的知识和技能</p>
+<p>3.人均自然资源；由自然界提供的用于生产物品和服务的投入，如土地、河流和矿藏</p>
+<p>4.技术知识：对生产物品和服务的最好方法的了解（1.公共知识；2.私人拥有；3.短期内私人拥有）</p>
+<p>技术知识是社会对世界如何运行的理解；人力资本是把这种理解传递给劳动力的资源消耗。</p>
+<p>生产函数：描述生产中所用的投入量和生产的产出量之间的关系。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/1984/01/24/CTR FOR PPC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="teddyjkwang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/teddy.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王际凯的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1984/01/24/CTR FOR PPC/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="1984-01-24T16:00:00+08:00">
+                1984-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="CTR-FOR-PPC"><a href="#CTR-FOR-PPC" class="headerlink" title="CTR FOR PPC"></a>CTR FOR PPC</h1><p>CTR = (total clicks on ads) / (total impressions)</p>
+<p>CTR能直接影响质量分数，</p>
+<h1 id="什么是好的CTR预估效果"><a href="#什么是好的CTR预估效果" class="headerlink" title="什么是好的CTR预估效果"></a>什么是好的CTR预估效果</h1><p>ctr跟活动有关，甚至跟关键词有关；</p>
+<p>Average click-through rate vary by industry, expected ctr depends on your ads position</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/1984/01/24/CTR预估 算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="teddyjkwang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/teddy.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王际凯的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1984/01/24/CTR预估 算法/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="1984-01-24T16:00:00+08:00">
+                1984-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="CTR预估-算法"><a href="#CTR预估-算法" class="headerlink" title="CTR预估 算法"></a>CTR预估 算法</h1><p>CTR预估本质是个二分类问题，以移动端展示广告为例，依据日志中的用户侧信息(年龄、性别、国籍，手机上安装的app列表)、广告测的信息(广告id、广告类别、广告标题)，上下文信息(渠道id)等，去建模预测用户是否会点击该广告。</p>
+<h2 id="FM之前的CTR算法"><a href="#FM之前的CTR算法" class="headerlink" title="FM之前的CTR算法"></a>FM之前的CTR算法</h2><p>FM之前，传统的处理方法是人工特征+线性模型(如LR)，这种方法的关键技术是找到用户点击行为背后隐含的特征组合，如男性、大学生用户往往会点击游戏类广告(<strong>那么男性且是大学生且是游戏类的组合特征就是一个关键特征</strong>)</p>
+<p>公式：$y_{linear} = \sigma(&lt;\vec w,\vec x&gt;)​$，其中$\vec w​$是权重向量，$\vec x​$是特征向量，$\sigma​$是sigmoid函数</p>
+<p>人工特征组合会存在诸多困难，如特征爆炸，特征难以被识别，组合特征难以设计。为了让模型自动考虑特征之间的二阶组合信息，线性模型推广为二阶多项式(2d-Polynomial)：</p>
+<p>$y_{poly} = \sigma (&lt;\vec w,\vec x&gt; + \sum_{i=1}^n\sum_{j=1}^n w_{ij} x_i y_j)​$</p>
+<p>其实就是特征两两相乘构成新特征，离散化后其实就是”且”操作，并对每个新特征分配独立的权重，通过机器学习自动学习这些权重。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/1984/01/24/1.3.2参数与统计量/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="teddyjkwang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/teddy.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王际凯的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1984/01/24/1.3.2参数与统计量/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="1984-01-24T16:00:00+08:00">
+                1984-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-3-2参数与统计量"><a href="#1-3-2参数与统计量" class="headerlink" title="1.3.2参数与统计量"></a>1.3.2参数与统计量</h2><h4 id="1-参数：用来描述总体特征的概括性数字度量"><a href="#1-参数：用来描述总体特征的概括性数字度量" class="headerlink" title="1.参数：用来描述总体特征的概括性数字度量"></a>1.参数：用来描述总体特征的概括性数字度量</h4><h4 id="2-统计量：用来描述样本特征的概括性数字度量"><a href="#2-统计量：用来描述样本特征的概括性数字度量" class="headerlink" title="2.统计量：用来描述样本特征的概括性数字度量"></a>2.统计量：用来描述样本特征的概括性数字度量</h4><p>出样的目的就是要根据样本统计量估计总体参数。</p>
+<h3 id="1-3-3-变量"><a href="#1-3-3-变量" class="headerlink" title="1.3.3 变量"></a>1.3.3 变量</h3><p>说明现象某种特征的概念，从一次观察到下一次观察结果会呈现差别或变化。</p>
+<p>1.分类变量</p>
+<p>2.顺序变量</p>
+<p>3.数值型变量(连续、离散)</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/1984/01/24/相似度分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="teddyjkwang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/teddy.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王际凯的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1984/01/24/相似度分析/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="1984-01-24T16:00:00+08:00">
+                1984-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="相似度分析"><a href="#相似度分析" class="headerlink" title="相似度分析"></a>相似度分析</h1><h2 id="一个实例：海量网页的相似度分析"><a href="#一个实例：海量网页的相似度分析" class="headerlink" title="一个实例：海量网页的相似度分析"></a>一个实例：海量网页的相似度分析</h2><p>目的</p>
+<p>1.防止重复(复制、转载)的网页被搜索到</p>
+<p>2.网页价值分析，越是被转载或复制的网页，重要性越高</p>
+<h2 id="基于Jaccard系数的相似度计算"><a href="#基于Jaccard系数的相似度计算" class="headerlink" title="基于Jaccard系数的相似度计算"></a>基于Jaccard系数的相似度计算</h2><p>​    Jaccard系数用于计算个体相似度，个体的特征属性可以通过符号度量或者布尔值标识。</p>
+<p>对于相似性分析，基本观点”两篇文章越相似，他们的词语交集越多</p>
+<h4 id="狭义Jaccard相似系数"><a href="#狭义Jaccard相似系数" class="headerlink" title="狭义Jaccard相似系数"></a>狭义Jaccard相似系数</h4><p>$J(A,B) = \frac{A \cap B}{A \cup B}$</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -783,7 +1675,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -840,7 +1732,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
